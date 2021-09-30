@@ -1,8 +1,8 @@
 <template>
   <v-btn
-    v-if="!hideSave"
+    v-if="!hideCancel"
     :depressed="depressed"
-    class="btn-save btn--save"
+    class="btn-cancel btn--cancel"
     :class="customClass"
     @click="click"
   >
@@ -11,7 +11,7 @@
       class="ml-2"
       v-if="!hideIcon"
     >
-      mdi-checkbox-marked-circle-outline
+      mdi-close-circle-outline
     </v-icon>
     <slot>{{ label }}</slot>
   </v-btn>
@@ -22,7 +22,7 @@ export default {
   props: {
     label: {
       type: String,
-      default: "ذخیره",
+      default: "لغو",
     },
     customClass: {
       type: String,
@@ -38,7 +38,7 @@ export default {
     },
     hideIcon: {
       type: Boolean,
-      default: false,
+      default: true,
     },
   },
   methods: {
@@ -49,14 +49,17 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.btn--save {
-  background-color: #2563eb !important;
-  border-color: #2563eb;
-  color: #fff !important;
+.btn--cancel {
+  background-color: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  color: #374151 !important;
   height: 40px;
-  width: 155px;
+  width: 53px;
   border-radius: 6px;
-  padding: 8px, 16px, 8px, 12px;
+  padding: 8px, 16px, 8px, 16px;
+
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(31, 41, 55, 0.08);
   
 }
 </style>

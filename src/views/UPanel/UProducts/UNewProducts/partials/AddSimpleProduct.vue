@@ -9,15 +9,14 @@
         <v-row>
           <v-toolbar-title>ساخت محصول</v-toolbar-title>
           <v-spacer></v-spacer>
-          <v-btn
-            depressed
-            color="primary"
-          >
-            ذخیره اطلاعات
-          </v-btn>
-          <v-btn depressed>
-            لغو
-          </v-btn>
+          <btn-save
+            label="ذخیره اطلاعات"
+            @click="save"
+            class="mx-2"
+          />
+          <btn-cancel
+            @click="cancel"
+          />
         </v-row>
       </v-container>
     </v-app-bar>
@@ -57,13 +56,15 @@
 
 <script>
 export default {
-    name: 'AddSimpleProduct',
-    data () {
-        return {
-            moreProducts: false
-        }
-    }
-}
+  name: "AddSimpleProduct",
+  data: () => ({
+    moreProducts: false,
+  }),
+  methods: {
+    save() {},
+    cancel() {},
+  },
+};
 </script>
 
 <style lang="scss" scoped>

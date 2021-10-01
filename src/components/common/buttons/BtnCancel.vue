@@ -48,18 +48,3 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
-.btn--cancel {
-  background-color: #ffffff !important;
-  border: 1px solid #e5e7eb !important;
-  color: #374151 !important;
-  height: 40px;
-  width: 53px;
-  border-radius: 6px;
-  padding: 8px, 16px, 8px, 16px;
-
-  box-sizing: border-box;
-  box-shadow: 0px 1px 2px rgba(31, 41, 55, 0.08);
-  
-}
-</style>

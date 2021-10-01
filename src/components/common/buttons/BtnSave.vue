@@ -11,7 +11,7 @@
       class="ml-2"
       v-if="!hideIcon"
     >
-      mdi-checkbox-marked-circle-outline
+      mdi-check-circle-outline
     </v-icon>
     <slot>{{ label }}</slot>
   </v-btn>
@@ -48,15 +48,3 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
-.btn--save {
-  background-color: #2563eb !important;
-  border-color: #2563eb;
-  color: #fff !important;
-  height: 40px;
-  width: 155px;
-  border-radius: 6px;
-  padding: 8px, 16px, 8px, 12px;
-  
-}
-</style>

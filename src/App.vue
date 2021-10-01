@@ -1,36 +1,6 @@
 <template>
   <v-app id="app">
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/> -->
-    <v-navigation-drawer
-      v-model="drawer"
-      app
-      right
-      class="pt-4"
-      color="blue lighten-0"
-      mini-variant
-    >
-      <router-link to="/">
-        <v-icon
-          large
-          color="blue darken-2"
-        >
-          mdi-domain
-        </v-icon>
-      </router-link>
-      <router-link to="/UNewProduct">
-        <v-icon
-          large
-          color="blue darken-2"
-        >
-          mdi-domain
-        </v-icon>
-      </router-link>
-
-    </v-navigation-drawer>
+    <by-sidebar />
 
     <v-main class="grey lighten-3">
       <router-view />

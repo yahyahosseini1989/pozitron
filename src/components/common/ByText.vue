@@ -9,12 +9,10 @@
       outlined
       dense
     >
-      <template slot="append">
-        <v-icon class="byAppendIcon" @click="appendIconCallback">mdi-paperclip</v-icon>
+      <template slot="append" v-if="hasButton">
+        <v-icon  class="byAppendIcon" @click="appendIconCallback">{{ icon }}</v-icon>
         <!-- <v-icon @click="appendIconCallback">mdi-close</v-icon> -->
       </template>
-      <!-- @click:prepend="prependIconCallback" -->
-      <!-- prepend-icon="mdi-phone" -->
     </v-text-field>
 
   </div>
@@ -22,6 +20,7 @@
 
 <script>
 export default {
+  inheritAttrs: false,
   name: "ByText",
   props: {
     value: { type: String, default: "" },
@@ -29,6 +28,9 @@ export default {
     // hint: { type: String, default: "این فیلد ضروری می باشد" },
     // messages: { type: String, default: "این فیلد ضروری می باشد" },
     placeholder: { type: String, default: "" },
+    hasButton: { type: Boolean, default: false },
+    icon: { type: String, default: "" },
+    
   },
   methods: {
     appendIconCallback() {

@@ -5,11 +5,12 @@
     right
     class="by-sidebar"
     mini-variant
+    
   >
     <router-link to="/">
       <v-icon
         class="by-icon"
-        size="30px"
+        size="28px"
       >
         mdi-storefront-outline 
       </v-icon>
@@ -17,7 +18,7 @@
     <router-link to="/UNewProduct">
       <v-icon
         class="by-icon"
-        size="30px"
+        size="28px"
       >
         mdi-mailbox-outline
       </v-icon>
@@ -25,7 +26,7 @@
     <router-link to="/UNewProduct">
       <v-icon
         class="by-icon"
-        size="30px"
+        size="28px"
       >
         mdi-newspaper-variant-outline 
       </v-icon>
@@ -33,7 +34,7 @@
     <router-link to="/UNewProduct">
       <v-icon
         class="by-icon"
-        size="30px"
+        size="28px"
       >
         mdi-account-multiple-outline 
       </v-icon>
@@ -41,7 +42,7 @@
     <router-link to="/UNewProduct">
       <v-icon
         class="by-icon"
-        size="30px"
+        size="28px"
       >
         mdi-cog-outline
       </v-icon>

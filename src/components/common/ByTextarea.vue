@@ -1,11 +1,14 @@
 <template>
-  <v-textarea
-    outlined
-    :label="label"
-    :value="value"
-    :placeholder="placeholder"
-    dense
-  ></v-textarea>
+  <div class="byField">
+    <span class="legend">{{label}}</span>
+    <v-textarea
+      outlined
+      :value="value"
+      :placeholder="placeholder"
+      :rows="rows"
+      dense
+    ></v-textarea>
+  </div>
 </template>
 
 <script>
@@ -15,6 +18,7 @@ export default {
     label: { type: String, default: "" },
     value: { type: String, default: "" },
     placeholder: { type: String, default: "" },
+    rows: { type: Number, default: 5 },
   },
 };
 </script>

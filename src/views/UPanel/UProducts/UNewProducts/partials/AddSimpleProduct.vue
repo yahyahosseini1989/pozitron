@@ -26,16 +26,23 @@
       <v-row>
         <v-col cols="8">
           <by-sheet title="مشخصات کلی">
-            <by-text
-              label="نام محصول"
-              v-model="model"
-              placeholder="نام محصول را وارد نمایید"
-            />
-            <by-textarea
-              label="توضیحات"
-              v-model="model"
-              placeholder="توضیحات محصول را وارد نمایید"
-            />
+            <div class="row">
+              <div class="col-md-7">
+                <by-text
+                  label="نام محصول"
+                  v-model="model"
+                  placeholder="نام محصول مانند: گل، تیشرت و..."
+                />
+                <by-textarea
+                  label="توضیحات"
+                  v-model="model"
+                  :rows="3"
+                />
+              </div>
+              <div class="col-md-5">
+                <v-card></v-card>
+              </div>
+            </div>
           </by-sheet>
         </v-col>
         <v-col cols="4">
@@ -55,10 +62,61 @@
 
         <v-col cols="12">
           <by-sheet>
-            <v-checkbox
-              v-model="moreProducts"
-              label="می خواهم چندین محصول را در یک خانواده وارد کنم."
-            ></v-checkbox>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <v-checkbox
+                v-model="moreProducts"
+                label="می خواهم چندین محصول را در یک خانواده وارد کنم."
+              ></v-checkbox>
+              <!-- <v-spacer></v-spacer> -->
+              <v-btn icon>
+                <v-icon>mdi-chevron-down</v-icon>
+              </v-btn>
+            </div>
+          </by-sheet>
+
+        </v-col>
+        <v-col cols="12">
+          <by-sheet>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <v-checkbox
+                v-model="moreProducts"
+                label="می خواهم چندین محصول را در یک خانواده وارد کنم."
+              ></v-checkbox>
+              <!-- <v-spacer></v-spacer> -->
+              <v-btn icon>
+                <v-icon>mdi-chevron-down</v-icon>
+              </v-btn>
+            </div>
+          </by-sheet>
+
+        </v-col>
+        <v-col cols="12">
+          <by-sheet>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <v-checkbox
+                v-model="moreProducts"
+                label="می خواهم چندین محصول را در یک خانواده وارد کنم."
+              ></v-checkbox>
+              <!-- <v-spacer></v-spacer> -->
+              <v-btn icon>
+                <v-icon>mdi-chevron-down</v-icon>
+              </v-btn>
+            </div>
+          </by-sheet>
+
+        </v-col>
+        <v-col cols="12">
+          <by-sheet>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <v-checkbox
+                v-model="moreProducts"
+                label="می خواهم چندین محصول را در یک خانواده وارد کنم."
+              ></v-checkbox>
+              <!-- <v-spacer></v-spacer> -->
+              <v-btn icon>
+                <v-icon>mdi-chevron-down</v-icon>
+              </v-btn>
+            </div>
           </by-sheet>
 
         </v-col>
@@ -73,17 +131,9 @@ export default {
   name: "AddSimpleProduct",
   data: () => ({
     moreProducts: false,
-    model: '',
-    categories: [
-          'دسته اول',
-          'دسته دوم',
-          'دسته سوم'
-        ],
-    labels: [
-          'برچسب اول',
-          'برچسب دوم',
-          'برچسب سوم'
-        ],
+    model: "",
+    categories: ["دسته اول", "دسته دوم", "دسته سوم"],
+    labels: ["برچسب اول", "برچسب دوم", "برچسب سوم"],
   }),
   methods: {
     save() {},

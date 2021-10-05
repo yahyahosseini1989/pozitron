@@ -51,12 +51,12 @@
           <by-sheet title="دسته‌بندی‌ها و برچسب‌گذاری‌ها">
             <by-combo
               label="یک دسته انتخاب کن"
-              v-model="دسته"
+              v-model="category"
               :options="categories"
             />
             <by-combo
               label="یک برچسب انتخاب کن"
-              v-model="برچسب"
+              v-model="labelss"
               :options="labels"
             />
           </by-sheet>
@@ -111,14 +111,27 @@
                   label="محدودیتی در موجودی ندارم."
                 ></v-checkbox>
               </v-col>
-              <v-col cols="3">
+              <v-col cols="12">
+                <v-switch
+                  v-model="isOnlineSale"
+                  label="فروش آنلاین"
+                  inset
+                />
+              </v-col>
+              <v-col
+                cols="3"
+                v-if="isOnlineSale"
+              >
                 <by-text
                   label="قیمت آنلاین"
                   v-model="model"
                   placeholder="تومان"
                 />
               </v-col>
-              <v-col cols="3">
+              <v-col
+                cols="3"
+                v-if="isOnlineSale"
+              >
                 <by-text
                   label="موجودی آنلاین"
                   v-model="model"
@@ -174,7 +187,10 @@ export default {
   name: "AddSimpleProduct",
   data: () => ({
     moreProducts: false,
+    isOnlineSale: true,
     model: "",
+    category: ["دسته اول"],
+    labelss: ["برچسب"],
     categories: ["دسته اول", "دسته دوم", "دسته سوم"],
     labels: ["برچسب اول", "برچسب دوم", "برچسب سوم"],
   }),

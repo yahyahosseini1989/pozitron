@@ -40,6 +40,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    hideCancel: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
     click(value) {

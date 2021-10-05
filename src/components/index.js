@@ -11,6 +11,7 @@ import BySheet from './common/BySheet'
 import ByText from './common/ByText'
 import ByTextarea from './common/ByTextarea'
 import ByCombo from './common/ByCombo'
+import BySwitch from './common/BySwitch'
 
 // specials
 import BySidebar from './BySidebar'
@@ -25,6 +26,7 @@ export default {
     Vue.component('by-text', ByText)
     Vue.component('by-textarea', ByTextarea)
     Vue.component('by-combo', ByCombo)
+    Vue.component('by-switch', BySwitch)
 
     // specials
     Vue.component('by-sidebar', BySidebar)

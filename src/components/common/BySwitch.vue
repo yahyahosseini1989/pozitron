@@ -1,18 +1,22 @@
 <template>
-  <v-switch
-    :value="value"
-    @input="updateText"
-    inset
-    flat
-    :loading="loading"
-    :label="label"
-  ></v-switch>
+  <div :class="className">
+    <v-switch
+      :value="value"
+      @input="updateText"
+      inset
+      flat
+      :loading="loading"
+      :label="label"
+    />
+  </div>
 </template>
 
 <script>
 export default {
+  inheritAttrs: false,
   name: "BySwitch",
   props: {
+    className: { type: String, default: "" },
     value: { type: Boolean, default: false },
     label: { type: String, default: "" },
     loading: { type: Boolean, default: false },

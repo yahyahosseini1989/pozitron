@@ -12,6 +12,7 @@
     "material-design-icons": "^3.0.1",
     "material-icons": "^1.8.0",
     "vue": "^2.6.11",
+    "vue-barcode-scanner": "^0.8.1",
     "vue-material-design-icons": "^4.13.0",
     "vue-router": "^3.2.0",
     "vuetify": "^2.4.0",

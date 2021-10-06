@@ -12,6 +12,7 @@ import ByText from './common/ByText'
 import ByTextarea from './common/ByTextarea'
 import ByCombo from './common/ByCombo'
 import BySwitch from './common/BySwitch'
+import ByCheckbox from './common/ByCheckbox'
 
 // specials
 import BySidebar from './BySidebar'
@@ -27,6 +28,7 @@ export default {
     Vue.component('by-textarea', ByTextarea)
     Vue.component('by-combo', ByCombo)
     Vue.component('by-switch', BySwitch)
+    Vue.component('by-checkbox', ByCheckbox)
 
     // specials
     Vue.component('by-sidebar', BySidebar)

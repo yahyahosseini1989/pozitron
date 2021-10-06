@@ -195,9 +195,6 @@ input::placeholder {
   .hasBorder {
     border-bottom: 1px solid #c4c4c4;
   }
-  .bySheetBody {
-    margin: 20px ;
-  }
 
   /* *************  customise fields  ************* */
   .byField {
@@ -219,11 +216,23 @@ input::placeholder {
   }
 
   /* *************  by-text  ************* */
-  .byText {
-  }
+  // .byText {
+  // }
 
   /* *************  by-Textarea  ************* */
-  .byTextarea {
+  // .byTextarea {
+  // }
+
+  /* *************  by-Textarea  ************* */
+  .byCheckbox {
+    .v-label {
+      text-align: right;
+      color: #202223;
+      // font-family: Vazir FD;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+    }
   }
 
   /* *************  by-app-header  ************* */

@@ -15,7 +15,8 @@ import BySwitch from './common/BySwitch'
 import ByCheckbox from './common/ByCheckbox'
 
 // specials
-import BySidebar from './BySidebar'
+import BySidebar from './BySidebar' 
+import ByUploader from './ByUploader' 
 
 
 export default {
@@ -32,6 +33,7 @@ export default {
 
     // specials
     Vue.component('by-sidebar', BySidebar)
+    Vue.component('by-uploader', ByUploader)
 
   }
 }

@@ -33,7 +33,7 @@
                 />
               </div>
               <div class="col-md-5">
-                <v-card></v-card>
+                <by-uploader @files="getImages"/>
               </div>
             </div>
           </by-sheet>
@@ -70,7 +70,7 @@
           </by-sheet>
         </v-col>
 
-        <v-col cols="8" >
+        <v-col cols="8">
           <by-sheet title="فروش حضوری">
             <v-row dense>
               <by-text
@@ -165,6 +165,7 @@ export default {
     model: {
       productName: "",
       productDescription: "",
+      productImage: null,
       productCategory: null,
       productLabel: null,
       hasMoreProducts: false,
@@ -180,6 +181,9 @@ export default {
   methods: {
     save() {
       console.log(this.model);
+    },
+    getImages(images) {
+      return this.model.productImage = images;
     },
     cancel() {},
   },

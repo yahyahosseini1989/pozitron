@@ -42,8 +42,8 @@
   src: url("../fonts/IRANSansWeb(FaNum).woff") format("woff");
 }
 
-$primary-font: "IRANSans", "Roboto", Tahoma, Verdana, Geneva, sans-serif, "-apple-system", "Helvetica Neue", Helvetica,
-  Arial;
+$primary-font: "IRANSans", "Roboto", Tahoma, Verdana, Geneva, sans-serif,
+  "-apple-system", "Helvetica Neue", Helvetica, Arial;
 
 .primary-font {
   font-family: $primary-font;
@@ -232,6 +232,27 @@ input::placeholder {
       font-style: normal;
       font-weight: normal;
       font-size: 14px;
+    }
+  }
+
+  /* *************  by-uploader  ************* */
+  .byUploader {
+    border: 2px dashed #c4c4c4;
+    display: flex;
+    background: #fff;
+    height: 100%;
+    border-radius: 8px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    .container {
+      border: none;
+      background: none;
+      padding: 0;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
     }
   }
 

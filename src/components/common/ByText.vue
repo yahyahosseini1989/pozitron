@@ -5,6 +5,7 @@
     <v-text-field
       class="byText"
       :value="value"
+      @input="updateText"
       :placeholder="placeholder"
       outlined
       dense
@@ -35,6 +36,9 @@ export default {
   methods: {
     appendIconCallback() {
       this.$emit("append", this.value);
+    },
+    updateText($value) {
+      this.$emit("input", $value);
     },
   },
 };

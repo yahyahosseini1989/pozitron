@@ -30,7 +30,7 @@
               <div class="col-md-7">
                 <by-text
                   label="نام محصول"
-                  v-model="model"
+                  v-model="productName"
                   placeholder="نام محصول مانند: گل، تیشرت و..."
                   hasButton
                   icon="mdi-paperclip"
@@ -112,7 +112,7 @@
                 ></v-checkbox>
               </v-col>
               <v-col cols="12">
-                <v-switch
+                <by-switch
                   v-model="isOnlineSale"
                   label="فروش آنلاین"
                   inset
@@ -188,6 +188,7 @@ export default {
   data: () => ({
     moreProducts: false,
     isOnlineSale: true,
+    productName: "",
     model: "",
     category: ["دسته اول"],
     labelss: ["برچسب"],

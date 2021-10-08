@@ -273,15 +273,43 @@ textarea::placeholder {
     .isDisabled {
       color: #b4b4b4;
     }
+    .notAllowed {
+      cursor: not-allowed !important;
+    }
   }
 
   /* *************  by-text  ************* */
-  // .byText {
-  // }
+  .byText {
+    overflow: hidden !important;
+    .appendButton {
+      background-color: #f6f6f7;
+      position: absolute;
+      left: 3px;
+      top: 3px;
+      height: 85%;
+      width: 50px;
+      cursor: pointer;
+      z-index: 2;
+      border: none;
+      border-radius: 4px 0 0 4px;
+    }
+  }
 
   /* *************  by-Textarea  ************* */
   // .byTextarea {
   // }
+
+  /* *************  by-Switch  ************* */
+  .bySwitch {
+    label {
+      text-align: right;
+      color: #202223;
+      font-family: Vazir;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+    }
+  }
 
   /* *************  by-Textarea  ************* */
   .byCheckbox {

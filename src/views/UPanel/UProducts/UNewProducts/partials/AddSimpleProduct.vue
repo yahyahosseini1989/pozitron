@@ -1,13 +1,22 @@
 <template>
   <div>
-    <v-app-bar color="white" dense class="mb-2" flat>
+    <v-app-bar
+      color="white"
+      dense
+      class="mb-2"
+      flat
+    >
       <v-container>
         <v-row>
           <v-toolbar-title class="align-center">
             <h4>ساخت محصول</h4>
           </v-toolbar-title>
           <v-spacer></v-spacer>
-          <btn-save label="ذخیره اطلاعات" @click="save" class="mx-2" />
+          <btn-save
+            label="ذخیره اطلاعات"
+            @click="save"
+            class="mx-2"
+          />
           <btn-cancel @click="cancel" />
         </v-row>
       </v-container>
@@ -26,6 +35,7 @@
                   hasButton
                   icon="mdi-paperclip"
                   class="mb-6"
+                  :disabledButton="isDisabledButton"
                 />
                 <by-textarea
                   label="توضیحات"
@@ -34,7 +44,7 @@
                 />
               </div>
               <div class="col-md-5">
-                <by-uploader @files="getImages"/>
+                <by-uploader @files="getImages" />
               </div>
             </div>
           </by-sheet>
@@ -45,7 +55,7 @@
               placeholder="یک دسته انتخاب کن"
               v-model="model.productCategory"
               :options="categories"
-                  class="mb-6"
+              class="mb-6"
             />
             <!-- :label="productLabel === '' ? 'دسته' : ''" -->
             <by-combo
@@ -104,21 +114,31 @@
                 v-model="model.isLimited"
                 className="col-md-6"
               />
-              <by-switch
-                label="فروش آنلاین"
-                v-model="model.isOnlineSale"
-                className="col-md-12 pa-none"
-              />
+
+              <div class="col-md-12 py-0">
+                <v-switch
+                  label="فروش آنلاین"
+                  v-model="isOnlineSale"
+                  inset
+                  flat
+                  dense
+                  color="blue darken-1"
+                  class="bySwitch"
+                />
+              </div>
+
               <by-text
-                :disabled="isOnlineSale"
+                :disabled="!isOnlineSale"
                 label="قیمت آنلاین"
+                type="number"
                 v-model="model.onlineFee"
                 placeholder="تومان"
                 class="col-md-3"
               />
               <by-text
-                :disabled="isOnlineSale"
+                :disabled="!isOnlineSale"
                 label="موجودی آنلاین"
+                type="number"
                 v-model="model.onlineExisting"
                 placeholder="تعداد"
                 class="col-md-3"
@@ -135,28 +155,28 @@
                 type="number"
                 v-model="model.productLength"
                 placeholder="سانتی متر"
-                className="col-md-6 col-sm-3 mt-0 pb-0"
+                className="col-md-6"
               />
               <by-text
                 label="عرض"
                 type="number"
                 v-model="model.productWidth"
                 placeholder="سانتی متر"
-                className="col-md-6 col-sm-3"
+                className="col-md-6"
               />
               <by-text
                 label="ارتفاع"
                 type="number"
                 v-model="model.productHeight"
                 placeholder="سانتی متر"
-                className="col-md-6 col-sm-3"
+                className="col-md-6"
               />
               <by-text
                 label="وزن"
                 type="number"
                 v-model="model.productWeight"
                 placeholder="کیلوگرم"
-                className="col-md-6 col-sm-3"
+                className="col-md-6"
               />
             </v-row>
           </by-sheet>
@@ -170,7 +190,8 @@
 export default {
   name: "AddSimpleProduct",
   data: () => ({
-    isOnlineSale: true,
+    isOnlineSale: false,
+    isDisabledButton: true,
     model: {
       productName: "",
       productDescription: "",
@@ -197,7 +218,7 @@ export default {
       console.log(this.model);
     },
     getImages(images) {
-      return this.model.productImage = images;
+      return (this.model.productImage = images);
     },
     cancel() {},
   },

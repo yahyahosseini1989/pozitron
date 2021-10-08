@@ -1,14 +1,14 @@
 <template>
   <div :class="className">
     <v-switch
-      :value="value"
-      @input="updateText"
+      v-model="currentValue"
       inset
       flat
       :loading="loading"
       :label="label"
       dense
       color="blue darken-1"
+      class="bySwitch"
     />
   </div>
 </template>
@@ -17,11 +17,21 @@
 export default {
   inheritAttrs: false,
   name: "BySwitch",
+  data() {
+    return {
+      updateSwitch: null,
+    };
+  },
   props: {
     className: { type: String, default: "" },
     value: { type: Boolean, default: false },
     label: { type: String, default: "" },
     loading: { type: Boolean, default: false },
+  },
+  computed: {
+    currentValue() {
+      return this.value;
+    },
   },
   methods: {
     updateText($value) {
@@ -30,6 +40,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-</style>

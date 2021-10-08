@@ -4,7 +4,6 @@
     <div class="byField">
       <span :class="`legend ${disabled ? 'isDisabled' : ''}`">{{ label }}</span>
       <v-text-field
-        class="byText"
         :value="value"
         @input="updateText"
         :placeholder="placeholder"
@@ -12,6 +11,7 @@
         :disabled="disabled"
         :hide-details="hideDetails"
         dense
+        class="byText"
         :min="min"
         :max="max"
         :type="type"
@@ -19,24 +19,26 @@
         <template
           slot="append"
           v-if="hasButton"
+          style="position:relative; z-index:1;"
         >
-          <!-- <v-btn
+          <v-btn
+              @click="appendIconCallback"
+            :class="`appendButton ${disabledButton ? 'notAllowed' : ''}`"
             depressed
-            elevation="2"
             icon
             outlined
             plain
             raised
             tile
-          > -->
+            :disabled="disabledButton"
+          >
 
             <v-icon
               class="byAppendIcon"
-              @click="appendIconCallback"
             >{{
             icon
           }}</v-icon>
-          <!-- </v-btn> -->
+          </v-btn>
           <!-- <v-icon @click="appendIconCallback">mdi-close</v-icon> -->
         </template>
       </v-text-field>
@@ -57,6 +59,7 @@ export default {
     placeholder: { type: String, default: "" },
     hasButton: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
+    disabledButton: { type: Boolean, default: false },
     hideDetails: { type: Boolean, default: true },
     icon: { type: String, default: "" },
     type: { type: String, default: "" },
@@ -70,6 +73,7 @@ export default {
   },
   methods: {
     appendIconCallback() {
+      alert()
       this.$emit("append", this.value);
     },
     updateText($value) {

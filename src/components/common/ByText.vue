@@ -2,19 +2,38 @@
   <!-- :hint="hint" خطای نمایشی زیر فیلد -->
   <div :class="className">
     <div class="byField">
-      <span class="legend">{{ label }}</span>
+      <span :class="`legend ${disabled ? 'isDisabled' : ''}`">{{ label }}</span>
       <v-text-field
         class="byText"
         :value="value"
         @input="updateText"
         :placeholder="placeholder"
         outlined
+        :disabled="disabled"
+        :hide-details="hideDetails"
         dense
       >
-        <template slot="append" v-if="hasButton">
-          <v-icon class="byAppendIcon" @click="appendIconCallback">{{
+        <template
+          slot="append"
+          v-if="hasButton"
+        >
+          <!-- <v-btn
+            depressed
+            elevation="2"
+            icon
+            outlined
+            plain
+            raised
+            tile
+          > -->
+
+            <v-icon
+              class="byAppendIcon"
+              @click="appendIconCallback"
+            >{{
             icon
           }}</v-icon>
+          <!-- </v-btn> -->
           <!-- <v-icon @click="appendIconCallback">mdi-close</v-icon> -->
         </template>
       </v-text-field>
@@ -34,7 +53,14 @@ export default {
     // messages: { type: String, default: "این فیلد ضروری می باشد" },
     placeholder: { type: String, default: "" },
     hasButton: { type: Boolean, default: false },
+    disabled: { type: Boolean, default: false },
+    hideDetails: { type: Boolean, default: true },
     icon: { type: String, default: "" },
+  },
+  data() {
+    return {
+      messages: false,
+    };
   },
   methods: {
     appendIconCallback() {

@@ -8,6 +8,8 @@
       :rules="rules"
       :required="required"
       :color="color"
+      dense
+      hide-details
     >
     </v-checkbox>
   </div>
@@ -24,6 +26,7 @@ export default {
     label: { type: String, default: "" },
     color: { type: String, default: "#2563eb" },
     loading: { type: Boolean, default: false },
+    hideDetails: { type: Boolean, default: true },
   },
   methods: {
     updateText($value) {

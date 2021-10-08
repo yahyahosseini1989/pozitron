@@ -13,6 +13,7 @@
       @input="updateText"
       outlined
       dense
+      hide-details
       :placeholder="placeholder"
     >
     </v-combobox>
@@ -32,6 +33,7 @@ export default {
     hideSelected: { type: Boolean, default: false },
     multiple: { type: Boolean, default: false },
     smallChips: { type: Boolean, default: false },
+    hideDetails: { type: Boolean, default: true },
   },
   methods: {
     updateText($value) {

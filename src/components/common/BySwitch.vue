@@ -7,6 +7,7 @@
       flat
       :loading="loading"
       :label="label"
+      dense
     />
   </div>
 </template>

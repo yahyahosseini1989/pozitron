@@ -12,6 +12,9 @@
         :disabled="disabled"
         :hide-details="hideDetails"
         dense
+        :min="min"
+        :max="max"
+        :type="type"
       >
         <template
           slot="append"
@@ -56,6 +59,9 @@ export default {
     disabled: { type: Boolean, default: false },
     hideDetails: { type: Boolean, default: true },
     icon: { type: String, default: "" },
+    type: { type: String, default: "" },
+    min: { type: Number, default: 0 },
+    max: { type: Number },
   },
   data() {
     return {

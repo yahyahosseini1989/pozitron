@@ -8,6 +8,7 @@
       :loading="loading"
       :label="label"
       dense
+      color="blue darken-1"
     />
   </div>
 </template>

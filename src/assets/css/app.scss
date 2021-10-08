@@ -166,14 +166,16 @@ a,
   align-items: center;
 }
 
-input {
+input,
+textarea {
   font-family: Vazir;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
 }
 
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
   font-family: Vazir;
   font-size: 14px;
   font-style: normal;

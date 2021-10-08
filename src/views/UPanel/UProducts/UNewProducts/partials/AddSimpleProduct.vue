@@ -61,8 +61,8 @@
           <by-sheet>
             <div class="d-flex space-between align-center">
               <by-checkbox
-                v-model="model.hasMoreProducts"
                 label="می خواهم چندین محصول را در یک خانواده وارد کنم."
+                v-model="model.hasMoreProducts"
                 class=" mt-2 mb-4"
               />
               <v-spacer></v-spacer>
@@ -87,19 +87,21 @@
               <span class="offset-md-6"></span>
               <by-text
                 label="قیمت حضوری"
-                v-model="model.totalProduct"
-                placeholder="تعداد"
+                type="number"
+                v-model="model.faceToFacePrice"
+                placeholder="تومان"
                 className="col-md-3"
               />
               <by-text
                 label="موجودی کل"
+                type="number"
                 v-model="model.totalProduct"
                 placeholder="تعداد"
                 className="col-md-3"
               />
               <by-checkbox
-                v-model="model.isLimited"
                 label="محدودیتی در موجودی ندارم."
+                v-model="model.isLimited"
                 className="col-md-6"
               />
               <by-switch
@@ -108,14 +110,14 @@
                 className="col-md-12 pa-none"
               />
               <by-text
-                disabled="isOnlineSale"
+                :disabled="isOnlineSale"
                 label="قیمت آنلاین"
                 v-model="model.onlineFee"
                 placeholder="تومان"
                 class="col-md-3"
               />
               <by-text
-                disabled="isOnlineSale"
+                :disabled="isOnlineSale"
                 label="موجودی آنلاین"
                 v-model="model.onlineExisting"
                 placeholder="تعداد"
@@ -130,25 +132,29 @@
             <v-row>
               <by-text
                 label="طول"
-                v-model="model.totalProduct"
+                type="number"
+                v-model="model.productLength"
                 placeholder="سانتی متر"
                 className="col-md-6 col-sm-3 mt-0 pb-0"
               />
               <by-text
                 label="عرض"
-                v-model="model.totalProduct"
+                type="number"
+                v-model="model.productWidth"
                 placeholder="سانتی متر"
                 className="col-md-6 col-sm-3"
               />
               <by-text
                 label="ارتفاع"
-                v-model="model.totalProduct"
+                type="number"
+                v-model="model.productHeight"
                 placeholder="سانتی متر"
                 className="col-md-6 col-sm-3"
               />
               <by-text
                 label="وزن"
-                v-model="model.totalProduct"
+                type="number"
+                v-model="model.productWeight"
                 placeholder="کیلوگرم"
                 className="col-md-6 col-sm-3"
               />
@@ -173,10 +179,15 @@ export default {
       productLabel: null,
       hasMoreProducts: false,
       barcode: "",
-      totalProduct: "",
+      faceToFacePrice: null,
+      totalProduct: null,
       isLimited: false,
-      onlineFee: "",
-      onlineExisting: "",
+      onlineFee: null,
+      onlineExisting: null,
+      productLength: null,
+      productWidth: null,
+      productHeight: null,
+      productWeight: null,
     },
     categories: ["دسته اول", "دسته دوم", "دسته سوم"],
     labels: ["برچسب اول", "برچسب دوم", "برچسب سوم"],
